@@ -1,0 +1,409 @@
+============================
+AZURE AI-900: COMPLETE STUDY GUIDE
+============================
+
+---
+DOMAIN 1: AI WORKLOADS AND CONSIDERATIONS (15-20%)
+---
+
+## What is Artificial Intelligence?
+Artificial Intelligence (AI) refers to software that exhibits human-like capabilities such as understanding natural language, recognizing images, drawing inferences, and making recommendations. AI enables machines to simulate human thinking and decision-making processes.
+
+## Common AI Workload Types
+- **Machine Learning**: Training models on data to make predictions or classifications (e.g., predicting house prices, detecting fraud).
+- **Computer Vision**: Enabling machines to interpret visual information from images and videos (e.g., object detection, facial recognition).
+- **Natural Language Processing (NLP)**: Processing and understanding human language (e.g., sentiment analysis, translation, summarization).
+- **Conversational AI**: Creating intelligent chatbots and virtual agents (e.g., Azure Bot Service, QnA Maker).
+- **Anomaly Detection**: Identifying unusual patterns or outliers in data.
+- **Knowledge Mining**: Extracting structured information from unstructured data (e.g., Azure AI Search).
+
+## Responsible AI Principles
+Microsoft has defined 6 core principles for Responsible AI:
+
+1. **Fairness**: AI systems should treat all people fairly and avoid affecting similarly situated groups of people differently. Example: A loan approval model should not discriminate based on gender or ethnicity.
+
+2. **Reliability and Safety**: AI systems should perform reliably and safely. AI should be tested thoroughly and behave predictably under various conditions.
+
+3. **Privacy and Security**: AI systems should be secure and respect privacy. Data used to train and operate AI systems must be protected.
+
+4. **Inclusiveness**: AI systems should empower everyone and engage people. AI should be accessible to all, including people with disabilities.
+
+5. **Transparency**: AI systems should be understandable. Users should be able to understand how AI makes decisions (explainability).
+
+6. **Accountability**: People should be accountable for AI systems. Organizations must have governance frameworks to ensure responsible AI use.
+
+## Considerations for Responsible AI
+- Understand the problem the AI is trying to solve.
+- Consider the data being used (bias, privacy).
+- Evaluate the potential impact on people.
+- Ensure transparency and explainability.
+- Monitor AI systems over time for drift and fairness issues.
+
+---
+DOMAIN 2: FUNDAMENTAL PRINCIPLES OF MACHINE LEARNING ON AZURE (20-25%)
+---
+
+## What is Machine Learning?
+Machine Learning (ML) is the process of training a model using data to make predictions or decisions without being explicitly programmed. Azure Machine Learning is Microsoft's cloud-based platform for creating and managing ML solutions.
+
+## Types of Machine Learning
+
+### Supervised Learning
+- The model is trained on labeled data (input-output pairs).
+- **Regression**: Predicts a continuous numeric value. Example: predicting sales revenue.
+- **Classification**: Predicts a category or class. Example: spam detection (spam/not spam).
+
+### Unsupervised Learning
+- The model is trained on unlabeled data to find hidden patterns.
+- **Clustering**: Groups similar data points together. Example: customer segmentation.
+
+### Reinforcement Learning
+- An agent learns by interacting with an environment and receiving rewards or penalties.
+- Used in robotics, game playing (e.g., chess, Go).
+
+### Semi-supervised Learning
+- Combines small amounts of labeled data with large amounts of unlabeled data.
+
+## Machine Learning Process (ML Lifecycle)
+1. **Define the problem**: What are you trying to predict?
+2. **Get data**: Collect relevant, representative data.
+3. **Prepare data**: Clean, transform, and feature engineer.
+4. **Train the model**: Select algorithm, train on data.
+5. **Evaluate the model**: Use metrics to assess performance.
+6. **Deploy the model**: Make it available as a service.
+7. **Monitor the model**: Track performance over time.
+
+## Key Evaluation Metrics
+
+### Regression Metrics
+- **MAE (Mean Absolute Error)**: Average absolute difference between predicted and actual values.
+- **RMSE (Root Mean Squared Error)**: Square root of average squared differences. Penalizes large errors more.
+- **R² (Coefficient of Determination)**: How well the model explains variance (0 to 1; higher is better).
+
+### Classification Metrics
+- **Accuracy**: Percentage of correct predictions.
+- **Precision**: Of all predicted positives, how many are truly positive?
+- **Recall (Sensitivity)**: Of all actual positives, how many were correctly identified?
+- **F1 Score**: Harmonic mean of precision and recall.
+- **AUC-ROC**: Area under the receiver operating characteristic curve (higher is better).
+
+### Clustering Metrics
+- **Within-cluster sum of squares**: Measures cohesion.
+- **Silhouette score**: Measures how similar an object is to its cluster vs other clusters.
+
+## Azure Machine Learning Components
+
+### Azure ML Studio
+- Web-based IDE for building, training, and deploying ML models.
+- Supports drag-and-drop (Designer) and code-first (Notebooks) approaches.
+
+### Azure ML Designer
+- Visual drag-and-drop interface for building ML pipelines.
+- No coding required for simple scenarios.
+
+### Automated ML (AutoML)
+- Automatically tries multiple algorithms and hyperparameters.
+- Finds the best model for your dataset.
+- Available in Azure ML Studio.
+
+### Azure ML Pipelines
+- Workflow automation for ML tasks.
+- Reusable, scalable, and schedulable.
+
+### Azure ML Compute
+- **Compute Instance**: Development workstation (like a cloud VM).
+- **Compute Cluster**: For training jobs (scales up/down).
+- **Inference Cluster**: AKS cluster for production deployment.
+- **Attached Compute**: Link external compute resources.
+
+### MLflow Integration
+- Open-source platform for ML lifecycle management.
+- Azure ML supports MLflow for experiment tracking and model registry.
+
+## Deep Learning
+- A subset of machine learning using neural networks with multiple layers.
+- Inspired by the human brain's structure.
+- Applications: Image recognition, speech processing, NLP.
+- Key frameworks: PyTorch, TensorFlow.
+
+## Azure AI Services vs Azure ML
+- **Azure AI Services (Cognitive Services)**: Pre-built AI models accessible via APIs. No ML expertise needed.
+- **Azure Machine Learning**: Custom ML model development and deployment platform. Requires ML expertise.
+
+---
+DOMAIN 3: COMPUTER VISION WORKLOADS ON AZURE (15-20%)
+---
+
+## What is Computer Vision?
+Computer Vision is a field of AI that enables machines to interpret and understand visual information from the world, such as images and videos.
+
+## Common Computer Vision Tasks
+- **Image Classification**: Assign a label to an entire image. Example: "Is this a cat or a dog?"
+- **Object Detection**: Identify and locate objects in an image with bounding boxes.
+- **Semantic Segmentation**: Classify every pixel in an image (e.g., road, sky, car).
+- **Instance Segmentation**: Distinguish between individual instances of objects.
+- **Facial Detection**: Detect the presence of faces in images.
+- **Facial Recognition**: Identify specific individuals from facial features.
+- **Optical Character Recognition (OCR)**: Extract text from images and documents.
+
+## Azure Computer Vision Services
+
+### Azure AI Vision (formerly Computer Vision API)
+- **Image Analysis**: Extract tags, captions, objects, and brands from images.
+- **OCR / Read API**: Extract printed and handwritten text from images and PDFs.
+- **Spatial Analysis**: Analyze movement and presence of people in physical spaces.
+- **Face Detection**: Detect and analyze faces in images.
+- **Custom Vision**: Train custom image classification and object detection models.
+
+### Azure Custom Vision
+- Train custom models with your own images.
+- Two tasks: Image Classification and Object Detection.
+- Requires as few as 15 images per class to start (more is better).
+- Provides a simple web portal for training without code.
+- Exports models to run on-device (ONNX, TensorFlow, CoreML).
+
+### Azure AI Face
+- Detect faces and facial attributes (age, emotion, glasses, mask).
+- Note: Facial recognition (identifying specific people) requires Limited Access approval due to responsible AI concerns.
+
+### Azure AI Document Intelligence (formerly Form Recognizer)
+- Extract structured data from documents: forms, invoices, receipts, ID cards.
+- Pre-built models for common document types.
+- Custom models for domain-specific documents.
+
+### Azure AI Video Indexer
+- Analyze video content: transcripts, face detection, topic detection, sentiment.
+- Useful for media and entertainment use cases.
+
+## Image Classification vs Object Detection
+| Feature | Image Classification | Object Detection |
+|---------|---------------------|-----------------|
+| Output | Single label for the image | Labels + bounding boxes |
+| Question | "What is in this image?" | "Where are the objects?" |
+| Use Case | Is this X? | Detect X in this image |
+
+---
+DOMAIN 4: NATURAL LANGUAGE PROCESSING WORKLOADS ON AZURE (15-20%)
+---
+
+## What is Natural Language Processing?
+NLP is a branch of AI that deals with the interaction between computers and human language. It enables machines to read, understand, and generate human language.
+
+## Common NLP Tasks
+- **Text Classification**: Assign categories to text documents.
+- **Sentiment Analysis**: Determine whether text expresses positive, negative, or neutral sentiment.
+- **Named Entity Recognition (NER)**: Identify entities like people, places, organizations, dates in text.
+- **Key Phrase Extraction**: Extract the most important phrases from text.
+- **Language Detection**: Identify the language of a piece of text.
+- **Text Summarization**: Generate a concise summary of a longer text.
+- **Translation**: Convert text from one language to another.
+- **Question Answering**: Extract answers from documents given a question.
+- **Text Generation**: Generate human-like text (GPT models).
+
+## Azure AI Language (formerly Text Analytics + LUIS + QnA Maker)
+Azure AI Language is a cloud-based service that provides NLP features:
+
+### Sentiment Analysis
+- Analyzes text to determine sentiment: Positive, Negative, Neutral, or Mixed.
+- Returns confidence scores for each sentiment class.
+- Supports opinion mining (aspect-based sentiment).
+
+### Named Entity Recognition (NER)
+- Identifies and categorizes entities in text.
+- Entity categories: Person, Location, Organization, Date, Quantity, URL, Email, etc.
+
+### Key Phrase Extraction
+- Identifies main concepts from unstructured text.
+- Useful for indexing and search.
+
+### Language Detection
+- Detects the language of text input.
+- Returns the language name, ISO 6391 code, and confidence score.
+
+### Entity Linking
+- Disambiguates entities to known entries in Wikipedia.
+
+### Text Summarization
+- **Extractive**: Extracts key sentences from the original text.
+- **Abstractive**: Generates new sentences that summarize the content.
+
+### Question Answering (formerly QnA Maker)
+- Build a knowledge base from FAQs, documents, and URLs.
+- Returns the best answer to a user's question.
+- Powers conversational AI bots.
+
+### Conversational Language Understanding (CLU)
+- Understand user intent and extract entities from conversational input.
+- Successor to LUIS (Language Understanding).
+- Train with example utterances to build intent classifiers.
+
+### Custom Text Classification
+- Train models to classify text into custom categories.
+
+## Azure AI Translator
+- Cloud-based neural machine translation service.
+- Supports 100+ languages.
+- Features: Text translation, document translation, transliteration.
+
+## Azure AI Speech
+- **Speech-to-Text (STT)**: Convert spoken audio to text. Also called Automatic Speech Recognition (ASR).
+- **Text-to-Speech (TTS)**: Convert text to natural-sounding speech.
+- **Speaker Recognition**: Verify or identify speakers.
+- **Speech Translation**: Translate speech in real-time to another language.
+- Custom Speech: Train custom acoustic and language models.
+- Custom Neural Voice: Create a custom voice for TTS.
+
+## Conversational Language Understanding (CLU) Key Concepts
+- **Utterance**: Example of what a user might say.
+- **Intent**: The purpose or goal behind an utterance. Example: "BookFlight" intent.
+- **Entity**: Specific information extracted from the utterance. Example: Destination city.
+- **Training**: Providing examples to teach the model.
+- **Publishing**: Deploying the model so applications can use it.
+
+---
+DOMAIN 5: CONVERSATIONAL AI WORKLOADS ON AZURE (15-20%)
+---
+
+## What is Conversational AI?
+Conversational AI enables computers to have natural conversations with humans through text or voice. It's the technology behind chatbots and virtual assistants.
+
+## Key Components of Conversational AI
+1. **Natural Language Understanding (NLU)**: Understand what the user means.
+2. **Dialog Management**: Manage the flow of the conversation.
+3. **Natural Language Generation (NLG)**: Generate appropriate responses.
+4. **Knowledge Base**: Source of information for answers.
+
+## Azure Bot Service
+- Platform for building, testing, and deploying intelligent bots.
+- Integrates with multiple channels: Teams, Slack, Web Chat, Email, etc.
+- Supports Bot Framework SDK (C#, JavaScript, Python).
+- Can connect to Azure AI Language, OpenAI, and other services.
+
+## Bot Framework Components
+- **Bot Framework SDK**: Develop bots programmatically.
+- **Bot Framework Emulator**: Test bots locally.
+- **Bot Framework Composer**: Visual drag-and-drop bot builder (low-code).
+- **Azure Bot Service**: Host and manage bots in Azure.
+- **Direct Line**: Connect bots to custom applications.
+
+## Power Virtual Agents (now Microsoft Copilot Studio)
+- Low-code/no-code tool to create powerful chatbots.
+- Integrates with Power Platform (Power Automate, Power Apps).
+- Uses AI to suggest topics and responses.
+- For citizen developers (no coding required).
+
+## QnA Maker → Azure AI Language (Question Answering)
+- Extract Q&A pairs from documents, FAQs, and web pages.
+- Automatically generates a knowledge base.
+- Returns the most relevant answer.
+- Now integrated into Azure AI Language service.
+
+## Multi-turn Conversations
+- Some questions require multiple turns to get enough information.
+- Context is maintained across turns.
+- Example: Bot asks follow-up questions to book a flight.
+
+## Channels in Azure Bot Service
+- **Microsoft Teams**: Build bots for Teams meetings and channels.
+- **Web Chat**: Embed a bot on a website.
+- **Telegram, Slack, Facebook Messenger**: Social messaging platforms.
+- **Email**: Respond to email conversations.
+- **Voice**: Phone-based bots using Direct Line Speech.
+
+## Designing Good Conversational AI
+- Handle unexpected inputs gracefully.
+- Provide clear prompts and options.
+- Always offer a way to reach a human agent.
+- Use personality consistently.
+- Keep responses concise and relevant.
+- Test with diverse users.
+
+---
+BONUS: AZURE OPENAI SERVICE
+---
+
+## Azure OpenAI Service
+- Provides access to OpenAI's powerful models (GPT-4o, GPT-4, GPT-3.5-turbo, DALL-E, Whisper, Embeddings) on Azure infrastructure.
+- Enterprise security: Private networking, compliance, data privacy (your data is NOT used to train OpenAI models).
+- Integrates with Azure AI Search for RAG (Retrieval-Augmented Generation) scenarios.
+
+## Available Models in Azure OpenAI
+- **GPT-4o**: Most capable, multimodal (text + images).
+- **GPT-4 Turbo**: High-performance, large context window.
+- **GPT-3.5 Turbo**: Fast, cost-effective for chat and text generation.
+- **text-embedding-ada-002**: Text embeddings for semantic search.
+- **DALL-E 3**: Text-to-image generation.
+- **Whisper**: Speech-to-text transcription.
+
+## Key Azure OpenAI Concepts
+- **Deployment**: An instance of a model deployed to your Azure OpenAI resource.
+- **Prompt**: Input text given to the model.
+- **Completion**: The model's output.
+- **Token**: Basic unit of text (roughly 4 characters or ¾ of a word).
+- **Temperature**: Controls randomness (0 = deterministic, 1 = very creative).
+- **System Message**: Sets the behavior and persona of the AI assistant.
+
+## Retrieval-Augmented Generation (RAG)
+- Combines Azure OpenAI with Azure AI Search.
+- Steps: (1) Store documents in a vector index. (2) User asks a question. (3) Search retrieves relevant chunks. (4) LLM generates an answer grounded in those chunks.
+- Reduces hallucinations by grounding responses in real data.
+- Used for custom enterprise chatbots, document Q&A, knowledge bases.
+
+---
+AZURE AI SERVICES OVERVIEW
+---
+
+## Complete Azure AI Services Portfolio
+
+| Service | Category | Use Case |
+|---------|----------|----------|
+| Azure AI Vision | Computer Vision | Image analysis, OCR |
+| Azure Custom Vision | Computer Vision | Custom image classification |
+| Azure AI Face | Computer Vision | Face detection & recognition |
+| Azure AI Document Intelligence | Computer Vision | Form/document extraction |
+| Azure AI Language | NLP | Sentiment, NER, translation |
+| Azure AI Translator | NLP | Text/document translation |
+| Azure AI Speech | Speech | STT, TTS, speaker recognition |
+| Azure OpenAI Service | Generative AI | GPT, DALL-E, embeddings |
+| Azure Bot Service | Conversational AI | Chatbot development |
+| Azure AI Search | Knowledge Mining | Intelligent search |
+| Azure Machine Learning | ML Platform | Custom model training |
+| Azure AI Content Safety | Responsible AI | Content moderation |
+| Azure AI Anomaly Detector | Analytics | Anomaly detection in time series |
+| Azure AI Personalizer | Recommendations | Content personalization |
+
+## Pricing Models
+- Most Azure AI Services offer: Free tier (F0) + Standard tier (S0).
+- Pay per transaction/call or per hour of compute.
+- Always check Azure Pricing Calculator for estimates.
+
+## Azure AI Search (formerly Cognitive Search)
+- Fully managed search service with AI enrichment.
+- **Skillsets**: Chain of AI skills to enrich documents during indexing.
+- **Vector Search**: Store and search embeddings for semantic similarity.
+- **Semantic Ranking**: Re-rank results using language understanding.
+- **Indexers**: Automatically pull data from Azure Blob, SQL, Cosmos DB, etc.
+
+---
+EXAM TIPS FOR AI-900
+---
+
+## Key Things to Remember
+1. AI-900 is a FUNDAMENTALS exam — focus on concepts, not deep technical implementation.
+2. Know the difference between AI Services (pre-built) vs Azure ML (custom models).
+3. Remember Microsoft's 6 Responsible AI principles.
+4. Understand when to use each Azure AI service.
+5. Know basic ML concepts: supervised/unsupervised, regression/classification/clustering.
+6. Understand evaluation metrics: accuracy, precision, recall, F1, RMSE, R².
+7. Know the components of Azure Bot Service and conversational AI.
+8. Understand RAG (Retrieval-Augmented Generation) as a key pattern.
+9. Azure OpenAI ≠ OpenAI — Azure OpenAI provides enterprise security.
+10. CLU (Conversational Language Understanding) replaced LUIS.
+
+## Common Exam Questions
+- Q: Which Azure service would you use for OCR? → Azure AI Vision (Read API)
+- Q: Which metric measures false negatives? → Recall
+- Q: Which Responsible AI principle ensures fair treatment? → Fairness
+- Q: What replaces LUIS? → Conversational Language Understanding (CLU) in Azure AI Language
+- Q: What is the purpose of RAG? → Grounding LLM responses in real data to reduce hallucination
+- Q: Which Azure service lets you build bots without code? → Microsoft Copilot Studio (Power Virtual Agents)
